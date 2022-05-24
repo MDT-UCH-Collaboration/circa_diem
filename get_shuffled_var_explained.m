@@ -1,4 +1,4 @@
-function [shuffled_var_explained, p_val] = get_shuffled_var_explained(time_stamps, values, time_res, n_shuffles, shuffle_mode)
+function [var_explained, p_val] = get_shuffled_var_explained(time_stamps, values, time_res, n_shuffles, shuffle_mode)
 % function [shuffled_var_explained, p_val] = get_shuffled_var_explained(time_stamps, values, time_res, n_shuffles, shuffle_mode)
 % 
 % Use shuffle to see if variance explained is significant.
