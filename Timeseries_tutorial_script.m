@@ -61,11 +61,14 @@ shuffle_type    = 'circshift';
 % Get the proportion of variance explained by time of day
 var_explained = variance_explained_by_timeofday(time_stamps, values, time_res);
 
+var_explained = variance_explained_by_timeofday(L1tia, L1lfpBns, time_res);
+[shuffled_var_explained, var_explained_p] = get_shuffled_var_explained(L1tia, L1lfpBns, time_res, n_shuffles, shuffle_type);
 % Get the variance explained for shuffled data n_shuffles times to see whether var_explained is significant
 [shuffled_var_explained, var_explained_p] = get_shuffled_var_explained(time_stamps, values, time_res, n_shuffles, shuffle_type);
 
 % Plot a fit based on time of day to the data across days
 figure
+plot_timeofday_fit(L1tia, L1lfpBns, time_res, my_favourite_colour)
 plot_timeofday_fit(time_stamps, values, time_res, my_favourite_colour)
 
 % Add the variance explained by time of day & p-val to the figure title
